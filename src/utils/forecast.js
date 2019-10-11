@@ -24,6 +24,8 @@ const forecast = ({
         });
       } else {
         const cc = body.currently;
+        console.log(body.daily.data[0].temperatureHigh);
+        console.log(body.daily.data[0].temperatureLow);
         const {
           temperature,
           precipProbability
@@ -31,7 +33,9 @@ const forecast = ({
         callback(undefined, {
           temperature,
           precipProbability,
-          summary: body.daily.data[0].summary
+          summary: body.daily.data[0].summary,
+          temperatureHigh: body.daily.data[0].temperatureHigh,
+          temperatureLow: body.daily.data[0].temperatureLow
         });
       }
     }

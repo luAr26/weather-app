@@ -30,11 +30,13 @@ weatherForm.addEventListener('submit', (e) => {
         const {
           precipProbability,
           temperature,
-          summary
+          summary,
+          temperatureHigh: max,
+          temperatureLow: min,
         } = data.forecast;
 
         messageOne.textContent = data.location;
-        messageTwo.textContent = `${summary} It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain.`;
+        messageTwo.textContent = `${summary} It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain. The lowest temperature value will be: ${min}. The highest temperature value will be: ${max}.`;
       }
     });
   });
