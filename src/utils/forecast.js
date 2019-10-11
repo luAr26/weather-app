@@ -23,19 +23,24 @@ const forecast = ({
           error: body.error
         });
       } else {
-        const cc = body.currently;
-        console.log(body.daily.data[0].temperatureHigh);
-        console.log(body.daily.data[0].temperatureLow);
+
         const {
           temperature,
           precipProbability
-        } = cc;
+        } = body.currently;
+
+        const {
+          temperatureLow,
+          temperatureHigh,
+          summary
+        } = body.daily.data[0];
+
         callback(undefined, {
           temperature,
           precipProbability,
-          summary: body.daily.data[0].summary,
-          temperatureHigh: body.daily.data[0].temperatureHigh,
-          temperatureLow: body.daily.data[0].temperatureLow
+          summary,
+          temperatureHigh,
+          temperatureLow
         });
       }
     }

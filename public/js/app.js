@@ -25,8 +25,6 @@ weatherForm.addEventListener('submit', (e) => {
       if (data.error) {
         messageOne.textContent = data.error;
       } else {
-        console.log(data);
-
         const {
           precipProbability,
           temperature,
