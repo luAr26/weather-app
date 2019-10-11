@@ -34,7 +34,7 @@ weatherForm.addEventListener('submit', (e) => {
         } = data.forecast;
 
         messageOne.textContent = data.location;
-        messageTwo.textContent = `${summary} It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain. The lowest temperature value will be: ${min}. The highest temperature value will be: ${max}.`;
+        messageTwo.textContent = `${summary} It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain. The high today is ${max} with a low of ${min}.`;
       }
     });
   });
